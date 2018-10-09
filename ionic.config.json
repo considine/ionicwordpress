@@ -1,0 +1,7 @@
+{
+  "name": "koptional-wordpress",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

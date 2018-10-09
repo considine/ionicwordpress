@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div (click)="loadPost(post)" padding-bottom *ngFor="let post of posts$ | async">
+    <div>
+      <h3 [innerHTML]="post.title.rendered"> </h3>
+      <p no-margin> <small> By {{post._embedded.author[0].name }} </small> </p>
+    </div>
+    <div *ngIf="post.featured_image">
+      <img padding-top class="featured-image" [src]="post.featured_image">
+    </div>
+    <div>
+      <div [innerHTML]="post.excerpt.rendered"></div>
+    </div>
+  </div>
+</ion-content>
